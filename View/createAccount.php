@@ -17,26 +17,43 @@ $error_username = isset($_GET['error_username']) ? $_GET['error_username'] : 0;
 
 <body>
   <img src="../View/images/logo.png" class="smallImg">
-  <h2>Create Account</h2>
   </br>
-  <form method="post" action="../Controller/registerAccount.php" id="formCreateAccount">
-    <h3>Name</h3>
-    <h5>*Only letters</h5>
-    <input type="text" class="inputs" name="name" required>
-    <div class="alert alert-danger" role="alert" style="<?= $error_username ? '' : 'display:none' ?>">
-      Username already exists, please choose another username!
-    </div>
-    <h3>Username</h3>
-    <h5>*Only letters</h5>
-    <input type="text" class="inputs" name="username" required>
-    <h3>Password</h3>
-    <h5>*Require letters and numbers</h5>
-    <input type="password" class="inputs" name="password" required>
-    <h3>Repeat Password</h3>
-    <input type="password" class="inputs">
+  <p style="text-align:center;color:white">Create account</p>
+  <div class="container-sm">
+    <form method="post" action="../Controller/registerAccount.php" id="formCreateAccount">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Name</span>
+        </div>
+        <input type="text" class="form-control" name="name" aria-label="Name" aria-describedby="basic-addon1" required>
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Username</span>
+        </div>
+        <input type="text" class="form-control" name="username" aria-label="Username" aria-describedby="basic-addon1" required>
+      </div>
+
+      <div class="alert alert-danger" role="alert" style="<?= $error_username ? '' : 'display:none' ?>">
+        Username already exists, please choose another username!
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Password</span>
+        </div>
+        <input type="password" class="form-control" name="password" aria-label="Password" aria-describedby="basic-addon1" required>
+      </div>
+      </br>
+      <button type="submit" style="text-align:center;" class="btn btn-outline-primary">Create</button>
+      </br>
+    </form>
+
     </br>
-    <button type="submit" class="buttons"> Create </button>
-  </form>
+    </br>
+    <button type="button" style="text-align:center;" class="btn btn-outline-primary" onclick="location.href = '../index.php'">Back to Login</button>
+  </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

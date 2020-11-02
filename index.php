@@ -32,7 +32,7 @@ $error = isset($_GET['error']) ? $_GET['error'] : 0;
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">Password</span>
         </div>
-        <input type="text" class="form-control" name="password" aria-label="Password" aria-describedby="basic-addon1" required>
+        <input type="password" class="form-control" name="password" aria-label="Password" aria-describedby="basic-addon1" required>
       </div>
       </br>
       <button type="submit" align:center class="btn btn-outline-primary" value="login">Login</button>
@@ -41,7 +41,10 @@ $error = isset($_GET['error']) ? $_GET['error'] : 0;
 
     </br>
     <div class="alert alert-danger" role="alert" style="<?= $error == 1 ? '' : 'display:none' ?>">
-      Username or password invalid!
+      Username or password is invalid!
+    </div>
+    <div class="alert alert-success" role="alert" style="<?= $error == 2 ? '' : 'display:none' ?>">
+      Registration complete!
     </div>
     </br>
     <button type="button" style="text-align:center;" class="btn btn-outline-primary" onclick="location.href = '../View/createAccount.php'">Create a new account here</button>

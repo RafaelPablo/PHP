@@ -4,6 +4,9 @@ require_once('../Model/dbConnection.php');
 
 function validate_user($username, $password)
 {
+  $username = $_POST['username'];
+  $password = md5($_POST['password']);
+
   $dbObject = new db();
   $link = $dbObject->sql_connection();
 
@@ -21,11 +24,11 @@ function validate_user($username, $password)
   }
 }
 
-function register_user($username, $password)
+function register_user($name, $username, $password)
 {
   $name = $_POST['name'];
   $username = $_POST['username'];
-  $password = $_POST['password'];
+  $password = md5($_POST['password']);
 
   $dbObject = new db();
   $link = $dbObject->sql_connection();
@@ -57,11 +60,9 @@ function register_user($username, $password)
 
   $sql = "INSERT INTO teacher (name,username,password) values ('$name','$username','$password')";
 
-  var_dump($sql);
-
   if (mysqli_query($link, $sql)) {
-    echo 'User registered';
+    return true;
   } else {
-    echo 'User not registered';
+    return false;
   };
 }
