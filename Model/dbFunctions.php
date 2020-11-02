@@ -24,7 +24,7 @@ function validate_user($username, $password)
   }
 }
 
-function register_user($name, $username, $password)
+function register_user_teacher($name, $username, $password)
 {
   $name = $_POST['name'];
   $username = $_POST['username'];
@@ -54,11 +54,56 @@ function register_user($name, $username, $password)
       $return_get .= "error_username=1&";
     }
 
-    header('Location: ../View/createAccount.php?' . $return_get);
+    header('Location: ../View/createAccountTeacher.php?' . $return_get);
     die();
   }
 
   $sql = "INSERT INTO teacher (name,username,password) values ('$name','$username','$password')";
+
+  if (mysqli_query($link, $sql)) {
+    return true;
+  } else {
+    return false;
+  };
+}
+
+function register_user_student($name, $username, $password)
+{
+  $name = $_POST['name'];
+  $username = $_POST['username'];
+  $password = md5($_POST['password']);
+
+  $dbObject = new db();
+  $link = $dbObject->sql_connection();
+
+  $username_already_exits =  false;
+
+  $sql = "SELECT * FROM student WHERE USERNAME='$username'";
+
+  if ($result = mysqli_query($link, $sql)) {
+    $user_data = mysqli_fetch_array($result);
+
+    if (isset($user_data['USERNAME'])) {
+      echo 'Username already registered';
+      $username_already_exits =  true;
+    }
+  }
+
+  if ($username_already_exits) {
+
+    $return_get = '';
+
+    if ($username_already_exits) {
+      $return_get .= "error_username=1&";
+    }
+
+    header('Location: ../View/createAccountStudent.php?' . $return_get);
+    die();
+  }
+
+  $sql = "INSERT INTO student (name,username,password) values ('$name','$username','$password')";
+
+  var_dump($sql);
 
   if (mysqli_query($link, $sql)) {
     return true;

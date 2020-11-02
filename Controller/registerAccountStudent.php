@@ -6,7 +6,7 @@ $name = $_POST['name'];
 $username = $_POST['username'];
 $password = md5($_POST['password']);
 
-$register_user = register_user($name, $username, $password);
+$register_user = register_user_student($name, $username, $password);
 
 if ($register_user) {
   header('Location: ../index.php?error=2');
