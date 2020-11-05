@@ -29,6 +29,9 @@ $error = isset($_GET['error']) ? $_GET['error'] : 0;
       <li class="nav-item">
         <a class="nav-link" id="teacher-tab" data-toggle="tab" href="#teacher" role="tab" aria-controls="teacher" aria-selected="false">Teacher</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" id="secretary-tab" data-toggle="tab" href="#secretary" role="tab" aria-controls="secretary" aria-selected="false">Secretary</a>
+      </li>
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="student-tab" role="tabpanel" aria-labelledby="student-tab">
@@ -40,7 +43,6 @@ $error = isset($_GET['error']) ? $_GET['error'] : 0;
             </div>
             <input type="text" class="form-control" name="username" aria-label="Username" aria-describedby="basic-addon1" required>
           </div>
-
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Password</span>
@@ -54,6 +56,7 @@ $error = isset($_GET['error']) ? $_GET['error'] : 0;
           <button type="button" style="text-align:center;" class="btn btn-outline-primary" onclick="location.href = '../View/createAccountStudent.php'">Create a new account here</button>
         </form>
       </div>
+
       <div class="tab-pane fade" id="teacher" role="tabpanel" aria-labelledby="teacher-tab">
         </br>
         <form method="post" action="Controller/loginAccountTeacher.php">
@@ -63,7 +66,6 @@ $error = isset($_GET['error']) ? $_GET['error'] : 0;
             </div>
             <input type="text" class="form-control" name="username" aria-label="Username" aria-describedby="basic-addon1" required>
           </div>
-
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Password</span>
@@ -77,8 +79,30 @@ $error = isset($_GET['error']) ? $_GET['error'] : 0;
           <button type="button" style="text-align:center;" class="btn btn-outline-primary" onclick="location.href = '../View/createAccountTeacher.php'">Create a new account here</button>
         </form>
       </div>
-    </div>
 
+      <div class="tab-pane fade" id="secretary" role="tabpanel" aria-labelledby="secretary-tab">
+        </br>
+        <form method="post" action="Controller/loginAccountSecretary.php">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Username</span>
+            </div>
+            <input type="text" class="form-control" name="username" aria-label="Username" aria-describedby="basic-addon1" required>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Password</span>
+            </div>
+            <input type="password" class="form-control" name="password" aria-label="Password" aria-describedby="basic-addon1" required>
+          </div>
+          </br>
+          <button type="submit" align:center class="btn btn-outline-primary" value="login">Login</button>
+          </br>
+          </br>
+          <button type="button" style="text-align:center;" class="btn btn-outline-primary" onclick="location.href = '../View/createAccountSecretary.php'">Create a new account here</button>
+        </form>
+      </div>
+    </div>
     </br>
     <div class="alert alert-danger" role="alert" style="<?= $error == 1 ? '' : 'display:none' ?>">
       Username or password is invalid!
