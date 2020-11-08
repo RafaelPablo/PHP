@@ -1,16 +1,3 @@
-<?php
-
-session_start();
-
-if (!isset($_SESSION['username'])) {
-  header('Location: ../index.php?error=1');
-}
-
-$_SESSION['username'];
-$_SESSION['password'];
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,9 +33,7 @@ $_SESSION['password'];
   </ul>
   <div class="container-sm">
     </br>
-    <h5>Welcome to F School System!</h5>
-    </br>
-    <button type="button" style="text-align:center;" class="btn btn-danger" onclick="location.href = '../Controller/logoutAccount.php'">Logout</button>
+    <h5>Schools!</h5>
   </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

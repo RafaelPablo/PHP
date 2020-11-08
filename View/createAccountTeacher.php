@@ -18,7 +18,7 @@ $error_username = isset($_GET['error_username']) ? $_GET['error_username'] : 0;
 <body>
   <img src="../View/images/logo.png" class="smallImg">
   </br>
-  <p style="text-align:center;color:white">Create account Teacher</p>
+  <p style="text-align:center;color:white">Create a teacher account</p>
   <div class="container-sm">
     <form method="post" action="../Controller/registerAccountTeacher.php" id="formCreateAccount">
       <div class="input-group mb-3">

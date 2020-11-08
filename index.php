@@ -36,7 +36,7 @@ $error = isset($_GET['error']) ? $_GET['error'] : 0;
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="student-tab" role="tabpanel" aria-labelledby="student-tab">
         </br>
-        <form method="post" action="Controller/loginAccountStudent.php">
+        <form method="post" name='student' action="Controller/loginAccount.php">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Username</span>
@@ -53,13 +53,13 @@ $error = isset($_GET['error']) ? $_GET['error'] : 0;
           <button type="submit" align:center class="btn btn-outline-primary" value="login">Login</button>
           </br>
           </br>
-          <button type="button" style="text-align:center;" class="btn btn-outline-primary" onclick="location.href = '../View/createAccountStudent.php'">Create a new account here</button>
+          <button type="button" style="text-align:center;" class="btn btn-outline-primary" onclick="location.href = '../View/createAccountStudent.php'">Create a new student account here</button>
         </form>
       </div>
 
       <div class="tab-pane fade" id="teacher" role="tabpanel" aria-labelledby="teacher-tab">
         </br>
-        <form method="post" action="Controller/loginAccountTeacher.php">
+        <form method="post" name='teacher' action="Controller/loginAccount.php">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Username</span>
@@ -76,13 +76,13 @@ $error = isset($_GET['error']) ? $_GET['error'] : 0;
           <button type="submit" align:center class="btn btn-outline-primary" value="login">Login</button>
           </br>
           </br>
-          <button type="button" style="text-align:center;" class="btn btn-outline-primary" onclick="location.href = '../View/createAccountTeacher.php'">Create a new account here</button>
+          <button type="button" style="text-align:center;" class="btn btn-outline-primary" onclick="location.href = '../View/createAccountTeacher.php'">Create a new teacher account here</button>
         </form>
       </div>
 
       <div class="tab-pane fade" id="secretary" role="tabpanel" aria-labelledby="secretary-tab">
         </br>
-        <form method="post" action="Controller/loginAccountSecretary.php">
+        <form method="post" name='secretary' action="Controller/loginAccount.php">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Username</span>
@@ -99,7 +99,7 @@ $error = isset($_GET['error']) ? $_GET['error'] : 0;
           <button type="submit" align:center class="btn btn-outline-primary" value="login">Login</button>
           </br>
           </br>
-          <button type="button" style="text-align:center;" class="btn btn-outline-primary" onclick="location.href = '../View/createAccountSecretary.php'">Create a new account here</button>
+          <button type="button" style="text-align:center;" class="btn btn-outline-primary" onclick="location.href = '../View/createAccountSecretary.php'">Create a new secretary account here</button>
         </form>
       </div>
     </div>
